@@ -1,19 +1,31 @@
 ---
 layout: default
-altair-loader:
-  altair-chart-1: "charts/measlesAltair.json"
-hv-loader:
-  hv-chart-1: ["charts/measlesHvplot.html", "500"] # second argument is the desired height
-folium-loader:
-  folium-chart-1: ["charts/foliumChart.html", "400"] # second argument is the desired height
-  folium-chart-2: ["charts/percent_no_internet.html", "400"] # second argument is the desired height
 ---
 
-# Welcome!
+# Introduction
 
-This single-page website demos how to display visualizations created with altair, hvplot, and folium.
+[STPLANR](https://cran.r-project.org/web/packages/stplanr/vignettes/stplanr.html) is a package that can be used for travel behavior analysis using spatil data. An example of travel behavior is looking at **who** is travelling to where jobs are. This can answer several questions and help plan for public transit, demand and so on. This project looks at origin-destination data of Pennsylvania from 2017, and visualizes the demographics of travellers.
 
-For examples of how to use markdown to style text, see this [this page](./another-page.html).
+# Part 1: Defining the Study Area
+
+For this project the study area is University City, a neighborhood in West Philadelphia consisting of University of Pennsylvania (Penn), Drexel University as well as hospitals associated with Penn and housing, restaurants and other amenities. The unit of analysis was by census tract level. The census tracts used for this study are shown in the map below, and include the entire neighborhood of University City, with some extending beyond. Census Tract 42101980000 has a large boundary that includes Fairmount Park, but was used in this analysis since it captures the northeast part of University City. Additionally, a small number of households (if at all) are in Fairmount Park, thus too many outliers are not expected by including it.
+
+The methodology is explained in every part.
+
+![ucityct]({{ site.url }}{{ site.baseurl }}/assets/img/uc_ct.png)
+
+The census tracts were subset based on their location, as well as their attribute of being the destination census tracts. Thus, for the following analyses, the dataset was trimmed using destination census tracts. 
+
+# Part 2: Spatial Data
+
+To plot the origin-destination lines, the centroids of every census tract are plotted. The following image shows the same:
+
+![centroid]({{ site.url }}{{ site.baseurl }}/assets/img/pa_ct_centroid.png)
+
+Once the centroids were plotted, the 'od2line' function was used to plot the O-D lines. The data table for this shows the origin and destination census tracts. It is visualized as follows.
+
+![ODPA]({{ site.url }}{{ site.baseurl }}/assets/img/all_jobs.png)
+
 
 # Example: Embedding Altair & Hvplot Charts
 
