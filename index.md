@@ -26,10 +26,19 @@ Once the centroids were plotted, the 'od2line' function was used to plot the O-D
 
 ![ODPA]({{ site.url }}{{ site.baseurl }}/assets/img/all_jobs.png)
 
+The map above is confusing to read but according to it people from all over Pennsylvania come to work at University City. This might be because the data contains daily and monthly trips, or because people might enter their home as another place. To counter this, and to get a clearer picture, only census tracts in Philadephia are visualized in the following section.
 
-# Example: Embedding Altair & Hvplot Charts
+# Part 3: Initial Analysis
 
-This section will show examples of embedding interactive charts produced using [Altair](https://altair-viz.github.io) and [Hvplot](https://hvplot.pyviz.org/).
+Where in University City are most of the jobs? Some tracts chosen in the area, like the one that contains Fairmount Park, would have fewer jobs. A higher density of those would be around the universities and hospitals. Aggregating the data by jobs, the following chart shows which census tract has most jobs:
+
+![chart1]({{ site.url }}{{ site.baseurl }}/assets/img/jobs.png)
+
+Census Tract 42101039600 has the University of Pennsylvania, Drexel University as well as the hospitals. It is also the largest tract. Next, distances of O-D tracts were recorded and the density was tracts. The following tract shows the distance and number of jobs. **Most people working in University City live within 50km of the neighborhood**.
+
+![chart2]({{ site.url }}{{ site.baseurl }}/assets/img/jobsdensity.png)
+
+
 
 ## Altair Example
 
