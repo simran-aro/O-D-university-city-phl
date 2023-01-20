@@ -38,7 +38,21 @@ Census Tract 42101039600 has the University of Pennsylvania, Drexel University a
 
 ![chart2]({{ site.url }}{{ site.baseurl }}/assets/img/jobsdensity.png)
 
+Taking a quick look at where the furthest census tracts are, the 10 farthest tracts were isolated based on distance. The map below shows the same. This has no impact on the analysis- this was done for visualization purposes.
 
+![chart3]({{ site.url }}{{ site.baseurl }}/assets/img/farthest.png)
+
+# Part 4: Jobs!
+
+Where are most of University City's workers coming from? Aggregating by jobs and then isolating the top 10 and top 100 origin census tracts, the following maps were made. These census tracts have the highest density of people working in University census. Most of the these are in the Western suburbs of Philadelphia, Center City Philadelphia and some wealthy neighborhoods like Fishtown, Old City and Passyunk. The households incomes of these census tracts are much higher than the city's median- which makes sense, since jobs in healthcare and education and professional services, the major industries in University City, pay more.
+
+![chart4]({{ site.url }}{{ site.baseurl }}/assets/img/top1100.png)
+
+**Top Ten Census Tracts with High Density of Residents Working in University City**
+
+![chart5]({{ site.url }}{{ site.baseurl }}/assets/img/top100.png)
+
+**Top Hundred Census Tracts with High Density of Residents Working in University City**
 
 ## Altair Example
 
