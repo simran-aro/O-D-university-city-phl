@@ -46,55 +46,43 @@ Taking a quick look at where the furthest census tracts are, the 10 farthest tra
 
 Where are most of University City's workers coming from? Aggregating by jobs and then isolating the top 10 and top 100 origin census tracts, the following maps were made. These census tracts have the highest density of people working in University census. Most of the these are in the Western suburbs of Philadelphia, Center City Philadelphia and some wealthy neighborhoods like Fishtown, Old City and Passyunk. The households incomes of these census tracts are much higher than the city's median- which makes sense, since jobs in healthcare and education and professional services, the major industries in University City, pay more.
 
-![top10]({{ site.url }}{{ site.baseurl }}/assets/img/top1100.png)
-
 **Top Ten Census Tracts with High Density of Residents Working in University City**
 
-![top100]({{ site.url }}{{ site.baseurl }}/assets/img/top100.png)
+![top10]({{ site.url }}{{ site.baseurl }}/assets/img/top1100.png)
 
 **Top Hundred Census Tracts with High Density of Residents Working in University City**
 
-## Altair Example
+![top100]({{ site.url }}{{ site.baseurl }}/assets/img/top100.png)
 
-Below is a chart of the incidence of measles since 1928 for the 50 US states.
+# Part 5: Continuous Metrics- Exploring demographics of origin census tracts
 
-<div id="altair-chart-1"></div>
+Tidycensus is a package in R that allows one to pull data tables based on geographies, years and units of analysis. Using this package, data for income, median age, and percentage of transit users was downloaded to figure out more about the workers fr University City. First, this was plotted for all the O-D pairs in the dataset provided.
 
-This was produced using Altair and embedded in this static web page. Note that you can also display Python code on this page:
+![PAincome]({{ site.url }}{{ site.baseurl }}/assets/img/cross.png)
 
-```python
-import altair as alt
-alt.renderers.enable('notebook')
-```
+Plotting it for Pennsylvania can be dense. Even with a diverging color scheme, it's difficult to really see any patterns. Thus, census tracts only within Philadelphia were considered to hyperfocus on the Philadelphia County.
 
-## HvPlot Example
+**Median Household Income**
 
-Lastly, the measles incidence produced using the HvPlot package:
+![Phlincome]({{ site.url }}{{ site.baseurl }}/assets/img/phl_inc.png)
 
-<div id="hv-chart-1"></div>
+In Philadelphia, a large number of people come from North and Northwast Philadelphia, Chestnut Hill, Olc City and West Philadelphia. Chestnut Hill (northwest Philadelphia) and Old City (East Philadelphia) are neighborhoods consisting census tracts with the highest median household income. If isolated by jobs, it is likely that residents of these neighborhoods work in hospitals as doctors or administrators, or in education as administrators.
 
-## Notes
+**Median Age**
 
-- See the [lecture 13A slides](https://musa-550-fall-2021.github.io/slideslecture-13A.html) for the code that produced these plots.
+![Phlage]({{ site.url }}{{ site.baseurl }}/assets/img/phl_age.png)
 
-**Important: When embedding charts, you will likely need to adjust the width/height of the charts before embedding them in the page so they fit nicely when embedded.**
+High income neighborhoods have a high correlation with age, according to this map. The median age in Philadelphia is 34.6. Older residents come from Northwest, Northeast Philadelphia and Old City, while younger workers are from North Philadelphia and West Philadelphia. West Philly's younger residents on this map may represent the high student population, including graduate, doctoral and post-doctoral students.
 
-# Example: Embedding Folium charts
+**Percentage of Public Transit Users**
 
-This post will show examples of embedding interactive maps produced using [Folium](https://github.com/python-visualization/folium).
+![Phlpt]({{ site.url }}{{ site.baseurl }}/assets/img/phl_pt.png)
 
-## OSMnx and Street Networks
+West and South Philadelphians have a high share of transit users. This has a correlation with younger residents, and lower income residents. These areas are also served with SEPTA, so that might be a reason as so why North Philadelphians don't often take transit. 
 
-The shortest route between the Art Museum and the Liberty Bell:
+# Conclusion
 
-<div id="folium-chart-1"></div>
+This project was done to experiment with STPLANR and see its uses. In case of University City in Philadelphia, the O-D lines were used to visualize the demographics of its workers. It is a more granular and spatial way of general demographic analysis. Looking at median household income, age and % of transit users of workers in University City might've not given so much information about where they are coming from, and it connects their origin neighborhoods with their jobs in University City.
 
-<br/>
 
-## Percentage of Households without Internet
 
-The percentage of households without internet by county:
-
-<div id="folium-chart-2"></div>
-
-See the [lecture 9B slides](https://musa-550-fall-2021.github.io/slides/lecture-9B.html) and the [lecture 10A slides](https://musa-550-fall-2021.github.io/slides/lecture-10A.html) for the code that produced these plots.
